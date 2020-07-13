@@ -31,3 +31,19 @@ for i in range(3, n + 1):
     solution[i] = (solution[i - 1] + solution[i - 2] ) % 10007
     
 print(solution[n] % 10007)
+
+
+
+#11727
+
+n = int(input())
+
+solution = [0 for _ in range(1001)]
+
+solution[1] = 1
+solution[2] = 3
+for i in range(3, n + 1):
+    
+    solution[i] = (solution[i - 1] + 2 * solution[i - 2] ) % 10007
+    
+print(solution[n] % 10007)
