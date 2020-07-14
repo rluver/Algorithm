@@ -64,3 +64,7 @@ for i in range(4, n + 1):
     solution[i] = solution[i - 3] + solution[i - 2] + solution[i - 1]
 
 print(solution[n])
+
+
+
+#10844
