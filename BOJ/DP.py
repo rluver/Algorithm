@@ -102,3 +102,17 @@ for i in range(2, n + 1):
             solution[i][j] += solution[i - 1][k]
             
 print(sum(solution[n]) % 10007)
+
+
+
+#2193
+
+n = int(input())
+
+solution = [0, 1, 1]
+
+for i in range(3, n + 1):
+    solution.append(solution[i - 2] + solution[i - 1])
+            
+print(solution[n])
+
