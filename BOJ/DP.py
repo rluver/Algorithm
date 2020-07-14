@@ -116,3 +116,26 @@ for i in range(3, n + 1):
             
 print(solution[n])
 
+
+
+#9465
+
+T = int(input())
+
+for _ in range(T):
+    
+  solution = []
+  n = int(input())
+  
+  for _ in range(2):      
+      solution.append(list(map(int, input().split())))
+  
+  solution[0][1] += solution[1][0]
+  solution[1][1] += solution[0][0]
+  
+  for i in range(2, n):
+      solution[0][i] += max(solution[1][i - 1], solution[1][i - 2])
+      solution[1][i] += max(solution[0][i - 1], solution[0][i - 2])
+  
+  print(max(solution[0][i], solution[1][i]))
+
