@@ -68,3 +68,21 @@ print(solution[n])
 
 
 #10844
+
+n = int(input())
+
+solution = [[0 for i in range(10)] for j in range(n + 1)]
+
+for i in range(1, 10):
+    solution[1][i] = 1
+
+for i in range(2, n + 1):
+    for j in range(10):
+        if j == 0:
+            solution[i][j] = solution[i - 1][1]
+        elif j == 9:
+            solution[i][j] = solution[i - 1][8]
+        else:
+            solution[i][j] = solution[i - 1][j - 1] + solution[i - 1][j + 1]
+            
+print(sum(solution[n]) % 1000000000)
