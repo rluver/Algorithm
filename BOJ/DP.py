@@ -138,4 +138,25 @@ for _ in range(T):
       solution[1][i] += max(solution[0][i - 1], solution[0][i - 2])
   
   print(max(solution[0][i], solution[1][i]))
+    
+    
+    
+#2156
 
+n = int(input())
+
+wine = [0]
+for _ in range(n):
+    wine.append(int(input()))
+  
+solution = [0]
+solution.append(wine[1])  
+
+if n >= 2:
+    solution.append(wine[1] + wine[2])
+
+if n >= 3:
+    for i in range(3, n + 1):
+        solution.append(max(solution[i - 1], solution[i - 3] + wine[i - 1] + wine[i], solution[i - 2] + wine[i]))
+    
+print(solution[n])
