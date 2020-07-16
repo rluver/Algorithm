@@ -160,3 +160,24 @@ if n >= 3:
         solution.append(max(solution[i - 1], solution[i - 3] + wine[i - 1] + wine[i], solution[i - 2] + wine[i]))
     
 print(solution[n])
+
+
+
+#11053
+
+n = int(input())
+
+numbers = list(map(int, input().split()))
+
+solution = [0] * n
+
+for i in range(n):
+    min_ = 0
+    
+    for j in range(i):    
+        if numbers[i] > numbers[j]:
+            min_ = max(min_, solution[j])
+            
+    solution[i] = min_ + 1
+    
+print(max(solution))
