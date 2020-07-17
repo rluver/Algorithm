@@ -181,3 +181,19 @@ for i in range(n):
     solution[i] = min_ + 1
     
 print(max(solution))
+
+
+
+#11055
+
+n = int(input())
+numbers = list(map(int, input().split()))
+
+solution = list(map(int, numbers))
+
+for i in range(n):
+    for j in range(i):    
+        if numbers[i] > numbers[j]:
+            solution[i] = max(solution[i], solution[j] + numbers[i])
+              
+print(max(solution))
