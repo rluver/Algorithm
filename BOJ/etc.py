@@ -35,3 +35,16 @@ solution.sort(key = lambda x: (x[1], x[0]))
 for coord in solution:
     print(coord[0], coord[1])
     
+    
+    
+# 10814
+
+n = int(input())
+
+solution = [list(input().split()) for _ in range(n)]
+
+solution.sort(key = lambda x: int(x[0]))
+
+for value in solution:
+    print(value[0], value[1])
+    
