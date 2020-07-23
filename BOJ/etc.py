@@ -48,3 +48,16 @@ solution.sort(key = lambda x: int(x[0]))
 for value in solution:
     print(value[0], value[1])
     
+    
+    
+# 10825
+
+n = int(input())
+
+solution = [list(input().split()) for _ in range(n)]
+
+solution.sort(key = lambda x: (-int(x[1]), int(x[2]), -int(x[3]), x[0]))
+
+for value in solution:
+    print(value[0])
+    
