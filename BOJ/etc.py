@@ -61,3 +61,17 @@ solution.sort(key = lambda x: (-int(x[1]), int(x[2]), -int(x[3]), x[0]))
 for value in solution:
     print(value[0])
     
+
+    
+# 10989
+import sys
+
+n = int(sys.stdin.readline())
+
+solution = [0] * 10001
+
+for _ in range(n):
+    solution[int(sys.stdin.readline())] += 1
+
+for i in range(10001):
+    sys.stdout.write('%s\n' % i * solution[i])
