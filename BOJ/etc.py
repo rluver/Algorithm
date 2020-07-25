@@ -64,6 +64,7 @@ for value in solution:
 
     
 # 10989
+
 import sys
 
 n = int(sys.stdin.readline())
@@ -75,3 +76,19 @@ for _ in range(n):
 
 for i in range(10001):
     sys.stdout.write('%s\n' % i * solution[i])
+
+    
+    
+# 11652
+
+from collections import Counter
+
+n = int(input())
+
+solution = [input() for _ in range(n)]
+
+dic = Counter(solution)
+
+dic_sorted = sorted(dic.items(), key = lambda item: (item[1], -int(item[0])))
+
+print(int(dic_sorted[-1][0]))
