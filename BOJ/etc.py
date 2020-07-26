@@ -92,3 +92,15 @@ dic = Counter(solution)
 dic_sorted = sorted(dic.items(), key = lambda item: (item[1], -int(item[0])))
 
 print(int(dic_sorted[-1][0]))
+
+
+
+# 11004
+
+n, k = map(int, input().split())
+
+solution = list(map(int, input().split()))
+
+solution.sort()
+
+print(solution[k - 1])
