@@ -104,3 +104,55 @@ solution = list(map(int, input().split()))
 solution.sort()
 
 print(solution[k - 1])
+
+
+
+# 10828
+
+# using stack but time over
+class stack:
+    
+    def __init__(self):
+        self.solution = []
+        
+    def push(self, x):
+        self.solution.append(x)
+    
+    def pop(self):
+        try:
+            print(self.solution.pop())
+        except:
+            print(-1)
+    
+    def size(self):
+        print(len(self.solution))
+    
+    def empty(self):
+        if self.size() == 0:
+            print(1)
+        else:
+            print(0)
+    
+    def top(self):
+        try:
+            print(self.solution[-1])
+        except:
+            print(-1)
+        
+    
+n = int(input())
+stack = stack()
+
+for _ in range(n):
+    cmd = input().split()
+    
+    if cmd[0] == 'push':
+        stack.push(cmd[1])
+    elif cmd[0] == 'pop':
+        stack.pop()
+    elif cmd[0] == 'size':
+        stack.size()
+    elif cmd[0] == 'empty':
+        stack.empty()
+    elif cmd[0] == 'top':
+        stack.top()
