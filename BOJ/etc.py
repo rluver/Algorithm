@@ -156,3 +156,43 @@ for _ in range(n):
         stack.empty()
     elif cmd[0] == 'top':
         stack.top()
+
+        
+        
+# 9012
+
+class parenthesis:
+    
+    def __init__(self):
+        self.solution = ''
+        self.sum = 0
+    
+    def enter(self, x):
+        self.solution = x
+      
+N = int(input())
+
+for _ in range(N):    
+    
+    early_stop = 0
+    paren = parenthesis()
+    input_list = input()    
+    paren.enter(input_list)
+    
+    for i in paren.solution:
+    
+        if i == '(':
+            paren.sum += 1
+        elif i == ')':
+            paren.sum -= 1
+        
+        if paren.sum < 0:
+            print('NO')
+            early_stop = 1
+            break
+        
+    if early_stop == 0:
+        if paren.sum == 0:
+            print('YES')
+        else:
+            print('NO')
