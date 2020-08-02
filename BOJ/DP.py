@@ -213,3 +213,46 @@ for i in range(n):
             solution[i] = max(solution[i], solution[j] + 1)
               
 print(max(solution))
+
+
+
+#11054
+
+class BitonicSequence:
+    
+    def __init__(self, n):
+        self.n = n
+        self.Array = 0
+        
+        self.ForwardSequence = [0 for i in range(self.n)]
+        self.BackwardSequence = [0 for i in range(self.n)]
+        self.BitonicSequence = [0 for i in range(self.n)]
+        
+    def insertArray(self, inputArrays):
+        self.Array = inputArrays
+    
+    def getBitonicSequence(self):
+        # forward
+        for i in range(self.n):
+            for j in range(i):
+                if self.Array[i] > self.Array[j] and self.ForwardSequence[i] < self.ForwardSequence[j]:
+                    self.ForwardSequence[i] = self.ForwardSequence[j]
+            self.ForwardSequence[i] += 1
+        
+        # backward
+        for i in range(self.n - 1, -1, -1):
+            for j in range(self.n - 1, i, -1):
+                if self.Array[i] > self.Array[j] and self.BackwardSequence[i] < self.BackwardSequence[j]:
+                    self.BackwardSequence[i] = self.BackwardSequence[j]
+            self.BackwardSequence[i] += 1
+            
+        # combine
+        for i in range(self.n):
+            self.BitonicSequence[i] = self.ForwardSequence[i] + self.BackwardSequence[i] - 1
+        
+        print(max(self.BitonicSequence))
+
+
+bitonic = BitonicSequence(int(input()))
+bitonic.insertArray(list(map(int, input().split())))
+bitonic.getBitonicSequence()
