@@ -1,5 +1,6 @@
 # 1927
 
+import sys
 import heapq
 
 
@@ -10,7 +11,7 @@ class MinHeap:
         self.heap = []
     
     def insertNum(self):
-        self.num = int(input())
+        self.num = int(sys.stdin.readline())
         
         return self.num
         
