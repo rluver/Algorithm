@@ -59,3 +59,35 @@ class MaxHeap:
 
 minheap = MaxHeap(int(input()))
 minheap.getMaxHeap()
+
+
+
+# 11286
+
+import sys
+import heapq
+
+
+class absHeap:
+    
+    def __init__(self, N):
+        self.N = N
+        self.heap = []
+    
+    def insertNum(self):
+        self.num = int(sys.stdin.readline())
+        
+        return self.num
+        
+    def getabsHeap(self):        
+        for _ in range(self.N):
+            if self.insertNum() != 0:
+                heapq.heappush(self.heap, (abs(self.num), self.num))
+            else:
+                if self.heap:
+                    print(heapq.heappop(self.heap)[1])
+                else:
+                    print(0)
+
+absheap = absHeap(int(input()))
+absheap.getabsHeap()
