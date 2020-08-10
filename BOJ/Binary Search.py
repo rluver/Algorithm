@@ -1,3 +1,35 @@
+# 2869
+
+import sys
+
+
+class wantGoUp():
+    
+    def __init__(self, A, B, V):
+        self.A = A
+        self.B = B
+        self.V = V
+        
+        self.takenTime = (self.V - self.B) / (self.A - self.B)
+        self.result = 0
+    
+    def getDays(self):
+        if self.takenTime == int(self.takenTime):
+            self.takenTime = int(self.takenTime)
+        else:
+            self.takenTime = int(self.takenTime) + 1
+    
+    def showResult(self):
+        print(self.takenTime)
+        
+        
+a,b,v = map(int, sys.stdin.readline().split())
+wantgoup = wantGoUp(a, b, v)
+wantgoup.getDays()
+wantgoup.showResult()
+
+
+
 # 1654
 
 class LanDivide:
