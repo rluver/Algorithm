@@ -62,3 +62,40 @@ K, N = map(int, input().split())
 landiv = LanDivide(K, N)
 landiv.getMaxLen()
 print(landiv.end)
+
+
+
+# 1920
+
+import sys
+
+
+class findNum():
+    
+    def __init__(self, n):
+        self.N = n
+        self.A = []
+        self.B = []
+    
+    def insertA(self):
+        self.A.append(list(map(int, sys.stdin.readline().split())))
+        
+    def insertM(self, m):
+        self.M = m
+    
+    def insertB(self):
+        self.B.append(list(map(int, sys.stdin.readline().split())))
+    
+    def getAnswer(self):
+        for i in lists:
+            if i in A:
+                print(1)
+            else:
+                print(0)
+        
+
+findnum = findNum(sys.stdin.readline())
+findnum.insertA()
+findnum.insertM(sys.stdin.readline())
+findnum.insertB()
+findnum.getAnswer()
