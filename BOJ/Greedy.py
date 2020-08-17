@@ -1,3 +1,33 @@
+# 11399
+
+import sys
+
+
+class ATM():
+    
+    def __init__(self, n):
+        self.N = n
+        self.sum = 0
+    
+    def insertTime(self):
+        self.timeLists = list(map(int, sys.stdin.readline().split()))
+        
+    def calculateMin(self):
+        self.timeLists.sort()
+        
+        for i in range(self.N):
+            for j in range(i + 1):
+                self.sum += self.timeLists[j]
+        
+        print(self.sum)
+
+        
+atm = ATM(int(sys.stdin.readline()))
+atm.insertTime()
+atm.calculateMin()
+
+
+
 # 11047
 
 class Coin0:
