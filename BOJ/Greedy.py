@@ -1,3 +1,34 @@
+# 2839
+
+import sys
+
+
+class SugarDelivery():
+    
+    def __init__(self, input):
+        self.N = input
+        self.Box = 0
+    
+    def calculateCnt(self):
+        while True:
+            if self.N % 5 == 0:
+                self.Box += self.N // 5
+                print(self.Box)
+                break
+            
+            self.N -= 3
+            self.Box += 1
+            
+            if self.N < 0:
+                print('-1')
+                break
+                
+                
+sugardelivery = SugarDelivery(int(sys.stdin.readline()))
+sugardelivery.calculateCnt()
+
+
+
 # 11399
 
 import sys
