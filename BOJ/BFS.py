@@ -39,3 +39,54 @@ n, m = map(int, sys.stdin.readline().split())
 mazeprobe = mazeProbe(n, m)
 mazeprobe.insertLists()
 mazeprobe.getAnswer()
+
+
+
+# 2667
+
+import sys
+
+class numberingComplex():
+    
+    def __init__(self, n):
+        self.N = n
+        self.cnt = 0
+        self.complex = []
+        self.num = []
+        self.dx = [1, -1, 0, 0]
+        self.dy = [0, 0, -1, 1]
+    
+    def insertLists(self):
+        for _ in range(self.N):
+            self.complex.append(list(sys.stdin.readline()))
+                
+    def dfs(self, a, b):
+        self.complex[a][b] = '0'
+        self.cnt += 1
+        
+        for i in range(4):
+            x = a + self.dx[i]
+            y = b + self.dy[i]
+        
+            if x < 0 or x >= self.N or y < 0 or y >= self.N:
+                continue         
+            if self.complex[x][y] == '1':
+                self.dfs(x, y)
+        
+    def getAnswer(self):
+        for i in range(self.N):
+            for j in range(self.N):
+                if self.complex[i][j] == '1':
+                    self.cnt = 0
+                    self.dfs(i, j)
+                    self.num.append(self.cnt)
+         
+        print(len(self.num))
+        self.num.sort()
+        for i in self.num:
+            print(i)
+        
+                
+numberingcomplex = numberingComplex(int(sys.stdin.readline()))
+numberingcomplex.insertLists()
+numberingcomplex.getAnswer()
