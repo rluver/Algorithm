@@ -1,3 +1,24 @@
+# 2750
+
+import sys
+
+def valueSorting(size):
+    
+    valueLists = []
+    
+    for _ in range(size):
+        valueLists.append(int(sys.stdin.readline()))
+    
+    valueLists.sort()
+    
+    for i in valueLists:
+        print(i)
+                     
+
+valueSorting(int(sys.stdin.readline()))
+
+
+
 # 1181
 
 import sys
