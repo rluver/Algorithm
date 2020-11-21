@@ -1,3 +1,5 @@
+/* O(NlogN) */
+
 #include <iostream>
 #include <vector>
 #include <queue>
